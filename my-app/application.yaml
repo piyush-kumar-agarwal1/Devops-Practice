@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-learning-app
+  namespace: argocd
+  labels:
+    app: argocd-learning-app
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/piyush-kumar-agarwal1/Devops-Practice.git
+    targetRevision: main
+    path: argocd/my-app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
+  revisionHistoryLimit: 10

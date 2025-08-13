@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArgoCD Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">🚀 ArgoCD Learning Hub</h1>
+                <p class="hero-subtitle">GitOps Made Simple - Deploy with Confidence</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="deployments">0</span>
+                        <span class="stat-label">Deployments</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="uptime">99.9%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="syncs">0</span>
+                        <span class="stat-label">Auto Syncs</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="features">
+            <h2>Why ArgoCD?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>GitOps Workflow</h3>
+                    <p>Declarative continuous deployment using Git as the single source of truth</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Self-Healing</h3>
+                    <p>Automatically detects and corrects configuration drift in your clusters</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👀</div>
+                    <h3>Observability</h3>
+                    <p>Rich UI and CLI for monitoring application health and sync status</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Security</h3>
+                    <p>RBAC integration with Git providers and Kubernetes clusters</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Live Demo</h2>
+            <div class="demo-container">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">ArgoCD Status</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> kubectl get applications -n argocd
+                        </div>
+                        <div class="terminal-line">
+                            <span class="app-name">my-web-app</span>
+                            <span class="app-status synced">Synced</span>
+                            <span class="app-health healthy">Healthy</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> <span class="cursor">_</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Application Information</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🌍 Environment</h3>
+                    <p><strong>Namespace:</strong> default</p>
+                    <p><strong>Cluster:</strong> local-k8s</p>
+                    <p><strong>Version:</strong> v1.0.0</p>
+                </div>
+                <div class="info-card">
+                    <h3>📊 Resources</h3>
+                    <p><strong>Pods:</strong> <span id="pod-count">3</span>/3 Running</p>
+                    <p><strong>CPU:</strong> 150m/300m</p>
+                    <p><strong>Memory:</strong> 192Mi/384Mi</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>🎯 Deployed with ArgoCD | 💖 Built for Learning</p>
+        <p>Last Sync: <span id="last-sync">Just now</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
