@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/piyush-kumar-agarwal1/Devops-Practice.git
     targetRevision: main
-    path: argocd/my-app
+    path: my-app
   destination:
     server: https://kubernetes.default.svc
     namespace: default
